@@ -208,3 +208,118 @@ By the end of Week 2, you should have:
 ✅ EDA report (EDA.ipynb) with visualizations and insights.
 
 ✅ Ready-to-use dataset for model building in Week 3.
+
+------------------------------------------------------------------------------------------------------------------
+
+Week 3: Model Development
+Objective
+
+The focus of Week 3 is to build and evaluate the recommendation model that suggests personalized quizzes to learners based on their performance and preferences. We will experiment with different recommendation techniques and select the best-performing approach.
+
+Detailed Tasks
+✅ 1. Define Recommendation Approaches
+
+We will implement two main approaches:
+
+a) Content-Based Filtering
+
+Recommend quizzes based on:
+
+Topics where the learner shows low proficiency.
+
+Quizzes with matching difficulty preferences.
+
+Algorithm:
+
+For each learner, identify the weakest topics.
+
+Rank quizzes from those topics, considering difficulty level.
+
+b) Collaborative Filtering
+
+Recommend quizzes based on:
+
+Similar learners’ interactions (scores on quizzes).
+
+Algorithm:
+
+Use user-based similarity (learners with similar performance profiles).
+
+Predict the score a learner would get on an unseen quiz.
+
+Library:
+
+Use Surprise library for collaborative filtering implementation.
+
+✅ 2. Implement Content-Based Filtering
+
+Steps:
+
+Compute learner-topic proficiency matrix:
+
+learners x topics (average scores)
+
+
+Identify top N weakest topics for each learner.
+
+Recommend quizzes from those topics with suitable difficulty.
+
+Example:
+Learner L001 has low scores in Math → Recommend quizzes from Math.
+
+✅ 3. Implement Collaborative Filtering
+
+Steps:
+
+Create learner–quiz interaction matrix from performance.csv:
+
+learners x quizzes (scores)
+
+
+Use KNNBasic or SVD algorithm from Surprise library.
+
+Train the model to predict missing scores.
+
+Recommend top N quizzes with highest predicted scores.
+
+✅ 4. Model Evaluation
+
+Metrics to evaluate recommendation quality:
+
+Precision@K: Fraction of recommended quizzes that are relevant.
+
+Recall@K: Fraction of relevant quizzes that were recommended.
+
+RMSE: For predicted vs actual scores (collaborative filtering).
+
+Perform evaluation on test set (20%).
+
+✅ 5. Compare Approaches
+
+Compare content-based vs collaborative filtering performance.
+
+Decide whether to use one approach or hybrid approach:
+
+Combine both: start with content-based, then refine with collaborative filtering.
+
+✅ 6. Prepare Model Pipeline
+
+Build a Python module (recommendation.py) with:
+
+get_content_based_recommendations(learner_id, N)
+
+get_collaborative_recommendations(learner_id, N)
+
+Save the trained collaborative filtering model using joblib for deployment.
+
+Expected Outputs
+
+By the end of Week 3, you should have:
+
+✅ Trained collaborative filtering model and working content-based filtering function.
+
+✅ Evaluation report with metrics comparison.
+
+✅ Python script (recommendation.py) implementing both approaches.
+
+✅ Notebook (model_building.ipynb) with experiments and results.
