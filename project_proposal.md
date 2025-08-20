@@ -323,3 +323,111 @@ By the end of Week 3, you should have:
 ✅ Python script (recommendation.py) implementing both approaches.
 
 ✅ Notebook (model_building.ipynb) with experiments and results.
+
+--------------------------------------------------------------------------------------------------------------------
+
+Week 4: Integration, Deployment, and Documentation
+Objective
+
+The primary goal of Week 4 is to integrate the recommendation system into a simple interactive interface, deploy it locally or on the web, and prepare all documentation and final deliverables. This ensures the project is usable, well-documented, and ready for demonstration.
+
+Detailed Tasks
+✅ 1. Build a Simple Web Interface
+
+Framework: Use Flask (or Streamlit for quicker UI).
+
+Features of the UI:
+
+Input: learner_id (or select learner from a dropdown list).
+
+Output:
+
+Top N recommended quizzes with details like quiz_id, topic, difficulty level.
+
+A visualization (bar chart) of learner’s weakest topics.
+
+Example Flow:
+
+Learner selects ID → System fetches recommendations → Displays them in a user-friendly format.
+
+✅ 2. Integrate Model with UI
+
+Load pre-trained collaborative filtering model using joblib.
+
+Call recommendation functions from recommendation.py:
+
+get_content_based_recommendations(learner_id, N)
+
+get_collaborative_recommendations(learner_id, N)
+
+Optionally, implement hybrid approach:
+
+Combine both content-based and collaborative filtering results.
+
+Display a merged list (with ranking logic).
+
+✅ 3. Visualization of Learner Performance
+
+Use Matplotlib or Plotly to generate:
+
+Bar chart: Learner’s average score per topic.
+
+Highlight weak topics where recommendations are focused.
+
+✅ 4. Prepare Final Documentation
+
+README.md:
+
+Project overview.
+
+How to install and run the system.
+
+Explanation of recommendation logic.
+
+Code Documentation:
+
+Inline comments.
+
+Docstrings for all functions in recommendation.py and app.py.
+
+Architecture Diagram:
+
+Show workflow: Input → Preprocessing → Model → Recommendations → UI.
+
+✅ 5. Create Final Deliverables
+
+Demo Video (2–3 mins):
+
+Brief intro of the project.
+
+Show the UI and recommendations in action.
+
+Push All Files to GitHub:
+
+src/ with scripts.
+
+notebooks/ for EDA and model building.
+
+data/ with sample CSVs.
+
+README.md with instructions.
+
+requirements.txt with dependencies.
+
+Expected Outputs
+
+By the end of Week 4, you should have:
+
+✅ Flask/Streamlit app (app.py) with working recommendation system.
+
+✅ Saved trained model (model.pkl using joblib).
+
+✅ Complete documentation:
+
+README.md with setup guide.
+
+Code-level comments.
+
+✅ Demo video uploaded to Google Drive/YouTube and linked in README.
+
+✅ Project fully committed and pushed to GitHub.
